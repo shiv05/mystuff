@@ -1,0 +1,54 @@
+#version 330 core
+
+// Interpolated values from the vertex shaders
+in vec2 UV;
+in vec3 Position_worldspace;
+in vec3 Normal_cameraspace;
+in vec3 EyeDirection_cameraspace;
+in vec3 LightDirection_cameraspace;
+in vec4 ShadowCoord;
+
+layout(location = 0) out vec3 color;
+
+uniform mat4 MV;
+uniform vec3 LightPosition_worldspace;
+uniform sampler2DShadow shadowMap;
+
+void main(){
+
+	vec3 LightColor = vec3(1,1,1);
+	float LightPower = 1.0f;
+	
+	vec3 MaterialDiffuseColor = vec3(0.7,0.7,0.7);
+	vec3 MaterialAmbientColor = vec3(0.1,0.1,0.1) * MaterialDiffuseColor;
+	vec3 MaterialSpecularColor = vec3(0.3,0.3,0.3);
+
+	vec3 n = normalize( Normal_cameraspace );
+	
+	// Direction of the light (from the fragment to the light)
+	vec3 l = normalize( LightDirection_cameraspace );
+	
+	// Cosine of the angle between the normal and the light direction, 
+	float cosTheta = clamp( dot( n,l ), 0,1 );
+	
+	// Eye vector (towards the camera)
+	vec3 E = normalize(EyeDirection_cameraspace);
+	
+	// Direction in which the triangle reflects the light
+	vec3 R = reflect(-l,n);
+	
+	// Cosine of the angle between the Eye vector and the Reflect vector,
+	float cosAlpha = clamp( dot( E,R ), 0,1 );
+	
+	float visibility=1.0;
+
+	float bias = 0.005*tan(acos(cosTheta));
+	bias = clamp(bias, 0,0.01);
+	if(texture(shadowMap, ShadowCoord.xyz) < ShadowCoord.z)
+		visibility = 0.5;
+	
+	color = MaterialAmbientColor +
+			visibility * MaterialDiffuseColor * LightColor * LightPower * cosTheta +
+			visibility * MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,5);
+
+}
