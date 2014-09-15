@@ -1,0 +1,113 @@
+# depslib dependency file v1.0
+1357112451 source:c:\shivoam\gameattempt\attempts\cube\main.cpp
+	<math.h>
+	<cstdlib>
+	<fstream>
+	<iostream>
+	"lib.h"
+
+1356281492 c:\shivoam\gameattempt\attempts\cube\lib.h
+	<SDL.h>
+	<SDL_opengl.h>
+	<cstdlib>
+	<vector>
+	<string>
+	<algorithm>
+	<fstream>
+	<cstdio>
+	<iostream>
+
+1358785306 source:c:\shivoam\gameattempt\attempts\game\main.cpp
+	<math.h>
+	<cstdlib>
+	<fstream>
+	<iostream>
+	"lib.h"
+
+1357546753 c:\shivoam\gameattempt\attempts\game\lib.h
+	<SDL.h>
+	<SDL_opengl.h>
+	<cstdlib>
+	<vector>
+	<string>
+	<algorithm>
+	<fstream>
+	<cstdio>
+	<iostream>
+
+1359446815 source:c:\users\shivoam\desktop\game\main.cpp
+	<math.h>
+	<cstdlib>
+	<fstream>
+	<iostream>
+	"SDL_mixer.h"
+	"lib.h"
+
+1357526952 c:\users\shivoam\desktop\game\lib.h
+	<SDL.h>
+	<SDL_opengl.h>
+	<cstdlib>
+	<vector>
+	<string>
+	<algorithm>
+	<fstream>
+	<cstdio>
+	<iostream>
+
+1368011891 source:c:\shivoam\gameattempt\attempts\gamesound\main.cpp
+	<math.h>
+	<cstdlib>
+	<fstream>
+	<iostream>
+	"SDL_mixer.h"
+	"lib.h"
+
+1357526952 c:\shivoam\gameattempt\attempts\gamesound\lib.h
+	<SDL.h>
+	<SDL_opengl.h>
+	<cstdlib>
+	<vector>
+	<string>
+	<algorithm>
+	<fstream>
+	<cstdio>
+	<iostream>
+
+1368011891 source:c:\users\shivoam\dropbox\gamesound\main.cpp
+	<math.h>
+	<cstdlib>
+	<fstream>
+	<iostream>
+	"SDL_mixer.h"
+	"lib.h"
+
+1357526952 c:\users\shivoam\dropbox\gamesound\lib.h
+	<SDL.h>
+	<SDL_opengl.h>
+	<cstdlib>
+	<vector>
+	<string>
+	<algorithm>
+	<fstream>
+	<cstdio>
+	<iostream>
+
+1368011891 source:c:\users\shivoam\documents\github\mystuff\old opengl game\main.cpp
+	<math.h>
+	<cstdlib>
+	<fstream>
+	<iostream>
+	"SDL_mixer.h"
+	"lib.h"
+
+1357526952 c:\users\shivoam\documents\github\mystuff\old opengl game\lib.h
+	<SDL.h>
+	<SDL_opengl.h>
+	<cstdlib>
+	<vector>
+	<string>
+	<algorithm>
+	<fstream>
+	<cstdio>
+	<iostream>
+
